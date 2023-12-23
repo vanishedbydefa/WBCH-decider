@@ -1,11 +1,18 @@
 import random
 import time
+import json
 
-SEASON_ONE = [5,6,7]
-SEASON_TWO = [1,2,3,4,"Midseason Final",5,6,8, "Final"]
-SEASON_THREE = [1,2,3,4,"Midseason Final",5,6,7,8,"Final"]
-SEASON_FOUR = [1,2,3,4,"Midseason Final",6,7,8,9,10,"WBCH NNN Final"]
-ALL_SEASONS = {"1": SEASON_ONE, "2": SEASON_TWO, "3": SEASON_THREE, "4": SEASON_FOUR}
+RED = '\033[91m'
+GREEN = '\033[92m'
+YELLOW = '\033[93m'
+BLUE = '\033[94m'
+MAGENTA = '\033[95m'
+CYAN = '\033[96m'
+RESET = '\033[0m'  # Reset to default color
+
+f = open('epdb.json')
+data = json.load(f)
+f.close()
 
 def get_random_num():
     if random.randrange(0, 2):
@@ -13,71 +20,57 @@ def get_random_num():
     else:
         return 0
 
-def loading():
-    print("/", end='\r')
+def loading(loading_str:str, overwrite:bool):
+    print(f"{loading_str} |", end='\r')
     time.sleep(round(random.uniform(0, 1), 2))
-    print("-", end='\r')
+    print(f"{loading_str} /", end='\r')
     time.sleep(round(random.uniform(0, 1), 2))
-    print("\\", end='\r')
+    print(f"{loading_str} -", end='\r')
     time.sleep(round(random.uniform(0, 1), 2))
-    print("-", end='\r')
+    print(f"{loading_str} \\", end='\r')
     time.sleep(round(random.uniform(0, 1), 2))
+    print(f"{loading_str} |", end='\r')
+    time.sleep(round(random.uniform(0, 1), 2))
+    if overwrite:
+        print(f"{loading_str} ", end='\r')
+    else:
+        print(f"{loading_str} ", end='')
 
 def Coinflip():
     to_decide = input("Event on HEAD: ")
-    loading()
+    loading(to_decide + ":", overwrite=False)
         
     if get_random_num():
-        print("Head")
+        print(GREEN + "Head" + RESET)
     else:
-        print("Tail")
+        print(RED + "Tail" + RESET)
 
-
-def get_episode():
-    print("The episode will be in season: ")
-    loading()
-    seasons = {}
-    if get_random_num():
-        seasons["1"] = SEASON_ONE
-    if get_random_num():
-        seasons["2"] = SEASON_TWO
-    if get_random_num():
-        seasons["3"] = SEASON_THREE
-    if get_random_num():
-        seasons["4"] = SEASON_FOUR
-    if len(seasons.keys()) == 0:
-        seasons = ALL_SEASONS
+def get_season():
+    seasons = {} #dict, containing the amount of episodes of each season
+    for key in data:
+        key = data[key]
+        if key["season"] != 0:
+            seasons[key["season"]] = len(key["episodes"])
     
-    for i,season in enumerate(list(seasons.keys())):
-        print(str(season), end="")
-        if i < len(list(seasons.keys()))-1:
-            print(" or ", end="")
+    #randomly choose a season, based on the amount of episodes in it
+    entries, weights = zip(*seasons.items())
+    return random.choices(entries, weights=weights, k=1)[0]
 
-    time.sleep(1)
-
-    print("\nYou will do: ")
-    loading()
-    all_episodes = 0
-    for season in list(seasons.values()):
-        all_episodes += len(season)
-
-    conc_episode_of_all = random.randrange(1,all_episodes+2)
-
-    conc_seas = 0
-    conc_ep = 0
-    for key,season in seasons.items():
-        for ep in season:
-            all_episodes -= 1
-            if all_episodes == conc_episode_of_all:
-                conc_seas = key
-                conc_ep = ep
-                print("Season: " + str(conc_seas) + ", Episode: " + str(conc_ep))
-
+def get_episode(season=None):
+    episodes = {}
+    
+    if season == None:
+        season = get_season()
+    for key in data:
+        key = data[key]
+        if key["season"] == season:
+            episode = random.choices(key["episodes"], k=1)[0]
+            loading("Episode:", overwrite=True)
+            print(f'Episode: "{next(iter(episode))}"')
+    
 
 def main():
-    print(time.strftime("%H:%M:%S", time.localtime()))
-    print("I knew you would come back. Don't waste time, choose!\n")
-    
+    print(f'Start: {time.strftime("%H:%M:%S", time.localtime())}')   
     while True:
         decider_ans = input("Do you wan't to start the full decider program?(y/n): ")
         if decider_ans in ["y", "Y", "j", "J"]:
@@ -86,90 +79,77 @@ def main():
             Coinflip()
             return
     
-    print("Bust your Balls if Head")
-    loading()
+    loading("Bust your Balls:", overwrite=False)
     if get_random_num():
-        print("Head")
-    elif random.randrange(0,11) > 7:
-        print("Head")
-    elif random.randrange(0,101) > 80:
-        print("Head")
-    elif random.randrange(0,1001) > 900:
-        print("Head")
+        print(GREEN + "True" + RESET)
+    elif random.randrange(0,11) > 6:
+        print(GREEN + "True" + RESET)
+    elif random.randrange(0,101) > 70:
+        print(GREEN + "True" + RESET)
+    elif random.randrange(0,1001) > 800:
+        print(GREEN + "True" + RESET)
     else:
-        print("Tail")
+        print(RED + "False" + RESET)
         if get_random_num():
             wording = "must"
         else:
             wording = "can"
         if get_random_num():
-            print("(un)lucky, you " + wording + " retry in " + str(random.randrange(0,10)) + " minutes")
+            print("(un)lucky, you " + wording + " retry in " + str(random.randrange(1,6)) + " minutes")
         elif get_random_num():
-            print("(un)lucky, you " + wording + " retry in " + str(random.randrange(0,21)) + " minutes")
+            print("(un)lucky, you " + wording + " retry in " + str(random.randrange(5,11)) + " minutes")
         else:
-            print("(un)lucky, you " + wording + " retry in " + str(random.randrange(1,31)) + " minutes")
+            print("(un)lucky, you " + wording + " retry in " + str(random.randrange(10,21)) + " minutes")
         return
-
-    print("Make it searious if Head")
-    loading()
-    if random.randrange(0,11) <= 7:
-        print("Head")
-    else:
-        print("Tail")
-        if get_random_num():
-            print("You ran in a second round.")
-            loading()
-            if get_random_num():
-                print("Head")
-            else:
-                print("Tail")
-                print("strength = " + str(random.randrange(7,10)) + " /10(serious)")
-        else:
-            print("strength = " + str(random.randrange(4,7)) + " /10(serious)")
     
     get_episode()
 
-    print("Warmup if Head")
-    loading()
+    loading("Warmup:", overwrite=False)
     if get_random_num():
-        print("Head")
-        print("Warmup by busting if Head")
-        loading()
+        print(GREEN + "True" + RESET)
+        loading("  Warmup with busting:", overwrite=False)
         if get_random_num():
-            print("Head")
-            print("Warmup with a WBCH special if Head")
-            loading()
+            print(GREEN + "True" + RESET)
+            loading("    Warmup with a WBCH special:", overwrite=False)
             if get_random_num():
-                print("Head")
+                print(GREEN + "True" + RESET)
+                get_episode("WBCHSPECIAL")
             else:
-                print("Tail")
-                print("Warmup by looking at " + str(random.randrange(10,1001)) + " QOS pictures.")
-                print("When ever you see a 'qos, blacked, Vixen' sign or text, bust your balls\n as many times as you see it")
+                print(RED + "False" + RESET)
+                print("    -> Warmup by looking at " + str(random.randrange(10,501)) + " QOS pictures.")
+                print("       When ever you see a 'qos, blacked, Vixen' sign or text, bust your balls\n as many times as you see it")
         else:
-            print("Tail")
-            print("Warmup by stroking and squeezing your balls for 2min")
+            print(RED + "False" + RESET)
+            print("  -> Warmup by stroking and squeezing your balls for 2min")
     else:
-        print("Tail")
-        print("Do not warmup")
-
-    
+        print(RED + "False" + RESET)    
     print("\nNow it's decision time if you cum by busting or not!")
     time.sleep(2)
     print("The decider will start it's calculations and tell you the result. Wait a few seconds")
     border = 0
     cum_from_busting = False
     for i in range(0,10):
-        loading()
+        loading("Cum from busting:", overwrite=True)
         if get_random_num():
             border += 1
         if border == 5:
             cum_from_busting = True
+            loading("Cum from busting:", overwrite=False)
+            print(GREEN + "True" + RESET)
+            break
     
     if not cum_from_busting:
+        print("Wait")
         print("It looks like you don't need to cum from busting.")
         print("But a final test will decide about it and test your white luck another time!")
         while True:
-            dig = int(input("How often did you already busted yourself to an orgasm?(0-50)"))
+            dig = input("How often did you already busted yourself to an orgasm?(0-50)")
+            try:
+                dig = int(dig)
+            except ValueError:
+                print("Insert a number between 0 and 50")
+                continue
+            
             if int(dig) < 0 or int(dig) > 50:
                 print("Insert a number between 0 and 50")
                 continue
@@ -186,7 +166,7 @@ def main():
                 break
 
     if cum_from_busting:
-        print("Result: Bust your balls until you cum!")
+        print("\nResult: Bust your balls until you cum!")
         print("If you do not cum within the given episode, press 'y' for another episode. Otherwise press 'n'")
         print("Do not terminate this program until you came!\n")
 
