@@ -49,7 +49,7 @@ def get_season():
     seasons = {} #dict, containing the amount of episodes of each season
     for key in data:
         key = data[key]
-        if key["season"] != 0:
+        if key["season"] != 0 and type(key["season"]) == int:
             seasons[key["season"]] = len(key["episodes"])
     
     #randomly choose a season, based on the amount of episodes in it
