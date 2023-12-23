@@ -64,7 +64,10 @@ def get_episode(season=None):
     for key in data:
         key = data[key]
         if key["season"] == season:
-            episode = random.choices(key["episodes"], k=1)[0]
+            while True:
+                episode = random.choices(key["episodes"], k=1)[0]
+                if episode[next(iter(episode))] != "NOWARMUP":
+                    break
             loading("Episode:", overwrite=True)
             print(f'Episode: "{next(iter(episode))}"')
     
