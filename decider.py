@@ -67,7 +67,7 @@ def get_episode(premium=False, season=None):
             while True:
                 if premium:
                     episodes = itertools.chain(key["episodes"], key["premium_episodes"])
-                    episode = random.choice(list(epsidoes))
+                    episode = random.choice(list(episodes))
                 else:
                     episode = random.choices(key["episodes"], k=1)[0]
                 if episode[next(iter(episode))] != "NOWARMUP":
