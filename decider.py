@@ -3,49 +3,21 @@ import itertools
 import random
 import time
 import json
+import sys
+import os
 
-RED = '\033[91m'
-GREEN = '\033[92m'
-YELLOW = '\033[93m'
-BLUE = '\033[94m'
-MAGENTA = '\033[95m'
-CYAN = '\033[96m'
-RESET = '\033[0m'  # Reset to default color
+from colorama import init, Fore
+
+from helper import exe_helper, loading, get_random_num, Coinflip, check_path_exists
+
+init()
+RED = Fore.RED
+GREEN = Fore.GREEN
+RESET = Fore.RESET
 
 f = open('epdb.json')
 data = json.load(f)
 f.close()
-
-def get_random_num():
-    if random.randrange(0, 2):
-        return 1
-    else:
-        return 0
-
-def loading(loading_str:str, overwrite:bool):
-    print(f"{loading_str} |", end='\r')
-    time.sleep(round(random.uniform(0, 1), 2))
-    print(f"{loading_str} /", end='\r')
-    time.sleep(round(random.uniform(0, 1), 2))
-    print(f"{loading_str} -", end='\r')
-    time.sleep(round(random.uniform(0, 1), 2))
-    print(f"{loading_str} \\", end='\r')
-    time.sleep(round(random.uniform(0, 1), 2))
-    print(f"{loading_str} |", end='\r')
-    time.sleep(round(random.uniform(0, 1), 2))
-    if overwrite:
-        print(f"{loading_str} ", end='\r')
-    else:
-        print(f"{loading_str} ", end='')
-
-def Coinflip():
-    to_decide = input("Event on HEAD: ")
-    loading(to_decide + ":", overwrite=False)
-        
-    if get_random_num():
-        print(GREEN + "Head" + RESET)
-    else:
-        print(RED + "Tail" + RESET)
 
 def get_season():
     seasons = {} #dict, containing the amount of episodes of each season
@@ -77,13 +49,21 @@ def get_episode(premium=False, season=None):
     
 
 def main():
+    print(f'Start: {time.strftime("%H:%M:%S", time.localtime())}')
     parser = argparse.ArgumentParser(prog='WBCH Decider', description='Automatic decisions for doing WBCH episodes', epilog='https://github.com/vanishedbydefa')
     parser.add_argument('-p', '--premium', action='store_true', help='Include premium episodes')
 
     args = parser.parse_args()
-    premium = args.premium
-    
-    print(f'Start: {time.strftime("%H:%M:%S", time.localtime())}')   
+    premium = args.premium  
+
+    exe = False
+    if sys.argv[0][-4:] == ".exe":
+        exe = True
+        if not check_path_exists(os.getcwd()+"\\decider.exe", create=False):
+            print("Please start program in the folder where main.exe is stored")
+            return
+        premium = exe_helper()
+ 
     while True:
         decider_ans = input("Do you wan't to start the full decider program?(y/n): ")
         if decider_ans in ["y", "Y", "j", "J"]:
@@ -141,7 +121,7 @@ def main():
     print("The decider will start it's calculations and tell you the result. Wait a few seconds")
     border = 0
     cum_from_busting = False
-    for i in range(0,10):
+    for i in range(0,7):
         loading("Cum from busting:", overwrite=True)
         if get_random_num():
             border += 1
@@ -179,7 +159,7 @@ def main():
                 break
 
     if cum_from_busting:
-        print("\nResult: Bust your balls until you cum!")
+        print("\n\nResult: Bust your balls until you cum!")
         print("If you do not cum within the given episode, press 'y' for another episode. Otherwise press 'n'")
         print("Do not terminate this program until you came!\n")
 
