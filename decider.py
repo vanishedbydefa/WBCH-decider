@@ -1,3 +1,4 @@
+import argparse
 import random
 import time
 import json
@@ -56,16 +57,18 @@ def get_season():
     entries, weights = zip(*seasons.items())
     return random.choices(entries, weights=weights, k=1)[0]
 
-def get_episode(season=None):
-    episodes = {}
-    
+def get_episode(premium=False, season=None):   
     if season == None:
         season = get_season()
     for key in data:
         key = data[key]
         if key["season"] == season:
             while True:
-                episode = random.choices(key["episodes"], k=1)[0]
+                if premium:
+                    episodes = itertools.chain(key["episodes"], key["premium_episodes"])
+                    episode = random.choice(list(epsidoes))
+                else:
+                    episode = random.choices(key["episodes"], k=1)[0]
                 if episode[next(iter(episode))] != "NOWARMUP":
                     break
             loading("Episode:", overwrite=True)
@@ -73,6 +76,12 @@ def get_episode(season=None):
     
 
 def main():
+    parser = argparse.ArgumentParser(prog='WBCH Decider', description='Automatic decisions for doing WBCH episodes', epilog='https://github.com/vanishedbydefa')
+    parser.add_argument('-p', '--premium', action='store_true', help='Include premium episodes')
+
+    args = parser.parse_args()
+    premium = args.premium
+    
     print(f'Start: {time.strftime("%H:%M:%S", time.localtime())}')   
     while True:
         decider_ans = input("Do you wan't to start the full decider program?(y/n): ")
@@ -105,7 +114,7 @@ def main():
             print("(un)lucky, you " + wording + " retry in " + str(random.randrange(10,21)) + " minutes")
         return
     
-    get_episode()
+    get_episode(premium=premium)
 
     loading("Warmup:", overwrite=False)
     if get_random_num():
