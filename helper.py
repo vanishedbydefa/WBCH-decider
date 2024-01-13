@@ -1,12 +1,29 @@
-import os
-import time
+import itertools
 import random
+import json
+import time
+import sys
+import os
+
 from colorama import init, Fore
 
 init()
 RED = Fore.RED
 GREEN = Fore.GREEN
 RESET = Fore.RESET
+
+def get_data_file_path(filename):
+    if getattr(sys, 'frozen', False):  # Check if the application is run as a bundle
+        # If run as a bundle (e.g., PyInstaller executable), use sys._MEIPASS
+        return os.path.join(sys._MEIPASS, filename)
+    else:
+        # If run as a script, file is in cwd
+        return filename
+
+def load_json_file(filename:str):
+    file_path = get_data_file_path(filename)
+    with open(file_path, 'r') as f:
+        return json.load(f)
 
 def get_random_num():
     if random.randrange(0, 2):
@@ -74,3 +91,33 @@ def exe_helper():
         elif premium in ["n", "N", "no", "No"]:
             premium = False
             break
+
+def get_season():
+    data = load_json_file('epdb.json')
+    seasons = {} #dict, containing the amount of episodes of each season
+    for key in data:
+        key = data[key]
+        if key["season"] != 0 and type(key["season"]) == int:
+            seasons[key["season"]] = len(key["episodes"])
+    
+    #randomly choose a season, based on the amount of episodes in it
+    entries, weights = zip(*seasons.items())
+    return random.choices(entries, weights=weights, k=1)[0]
+
+def get_episode(premium=False, season=None):
+    data = load_json_file('epdb.json')   
+    if season == None:
+        season = get_season()
+    for key in data:
+        key = data[key]
+        if key["season"] == season:
+            while True:
+                if premium:
+                    episodes = itertools.chain(key["episodes"], key["premium_episodes"])
+                    episode = random.choice(list(episodes))
+                else:
+                    episode = random.choices(key["episodes"], k=1)[0]
+                if episode[next(iter(episode))] != "NOWARMUP":
+                    break
+            loading("Episode:", overwrite=True)
+            print(f'Episode: "{next(iter(episode))}"')
