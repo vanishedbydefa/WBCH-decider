@@ -1,53 +1,18 @@
 import argparse
-import itertools
 import random
 import time
-import json
 import sys
 import os
 
 from colorama import init, Fore
 
-from helper import exe_helper, loading, get_random_num, Coinflip, check_path_exists
+from helper import exe_helper, loading, get_random_num, Coinflip, check_path_exists, get_season, get_episode
 
 init()
 RED = Fore.RED
 GREEN = Fore.GREEN
 RESET = Fore.RESET
-
-f = open('epdb.json')
-data = json.load(f)
-f.close()
-
-def get_season():
-    seasons = {} #dict, containing the amount of episodes of each season
-    for key in data:
-        key = data[key]
-        if key["season"] != 0 and type(key["season"]) == int:
-            seasons[key["season"]] = len(key["episodes"])
     
-    #randomly choose a season, based on the amount of episodes in it
-    entries, weights = zip(*seasons.items())
-    return random.choices(entries, weights=weights, k=1)[0]
-
-def get_episode(premium=False, season=None):   
-    if season == None:
-        season = get_season()
-    for key in data:
-        key = data[key]
-        if key["season"] == season:
-            while True:
-                if premium:
-                    episodes = itertools.chain(key["episodes"], key["premium_episodes"])
-                    episode = random.choice(list(episodes))
-                else:
-                    episode = random.choices(key["episodes"], k=1)[0]
-                if episode[next(iter(episode))] != "NOWARMUP":
-                    break
-            loading("Episode:", overwrite=True)
-            print(f'Episode: "{next(iter(episode))}"')
-    
-
 def main():
     print(f'Start: {time.strftime("%H:%M:%S", time.localtime())}')
     parser = argparse.ArgumentParser(prog='WBCH Decider', description='Automatic decisions for doing WBCH episodes', epilog='https://github.com/vanishedbydefa')
@@ -59,10 +24,12 @@ def main():
     exe = False
     if sys.argv[0][-4:] == ".exe":
         exe = True
-        if not check_path_exists(os.getcwd()+"\\decider.exe", create=False):
-            print("Please start program in the folder where main.exe is stored")
-            return
         premium = exe_helper()
+
+    # Check if epdb is present and not running as exe. (exe already included the data)
+    if not check_path_exists(os.getcwd()+"\\decider.exe", create=False) and not exe:
+        print("Please start program in the folder where epdb.json is stored")
+        return
  
     while True:
         decider_ans = input("Do you wan't to start the full decider program?(y/n): ")
@@ -136,7 +103,7 @@ def main():
         print("It looks like you don't need to cum from busting.")
         print("But a final test will decide about it and test your white luck another time!")
         while True:
-            dig = input("How often did you already busted yourself to an orgasm?(0-50)")
+            dig = input("How often did you already busted yourself to an orgasm?(0-50): ")
             try:
                 dig = int(dig)
             except ValueError:
@@ -172,9 +139,9 @@ def main():
                 print("")
 
     else:
-        print("Result: You don't need to cum from busting. But you are suposed to do the")
+        print("\nResult: You don't need to cum from busting. But you are suposed to do the")
         print("given episode. After that you can decide on your own what to do next!")
-        print("Now, BUST!")
+        print("Now, BUST!\n")
 
     if exe:
         os.system("pause")
