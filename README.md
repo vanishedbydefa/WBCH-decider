@@ -1,5 +1,6 @@
 # WBCH-decider
 Simple python script, making decisions about WBCH
+![screenshot from the output of wbch-decider]([http://url/to/img.png](https://github.com/vanishedbydefa/WBCH-decider/blob/main/images/wbch-decider-scr.PNG))
 
 ## Usage
 ### Commandline
