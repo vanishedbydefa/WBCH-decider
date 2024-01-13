@@ -175,5 +175,7 @@ def main():
         print("Result: You don't need to cum from busting. But you are suposed to do the")
         print("given episode. After that you can decide on your own what to do next!")
         print("Now, BUST!")
-        
+
+    if exe:
+        os.system("pause")
 main()
