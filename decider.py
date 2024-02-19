@@ -24,20 +24,24 @@ def main():
     exe = False
     if sys.argv[0][-4:] == ".exe":
         exe = True
-        premium = exe_helper()
 
-    # Check if epdb is present and not running as exe. (exe already included the data)
-    if not check_path_exists(os.getcwd()+"\\decider.exe", create=False) and not exe:
-        print("Please start program in the folder where epdb.json is stored")
-        return
- 
     while True:
         decider_ans = input("Do you wan't to start the full decider program?(y/n): ")
         if decider_ans in ["y", "Y", "j", "J"]:
             break
         else:
             Coinflip()
+            if exe:
+                os.system("pause")
             return
+
+    if exe:
+        premium = exe_helper()
+
+    # Check if epdb is present and not running as exe. (exe already included the data)
+    if not check_path_exists(os.getcwd()+"\\decider.exe", create=False) and not exe:
+        print("Please start program in the folder where epdb.json is stored")
+        return
     
     loading("Bust your Balls:", overwrite=False)
     if get_random_num():
@@ -88,7 +92,7 @@ def main():
     print("The decider will start it's calculations and tell you the result. Wait a few seconds")
     border = 0
     cum_from_busting = False
-    for i in range(0,7):
+    for i in range(0,5):
         loading("Cum from busting:", overwrite=True)
         if get_random_num():
             border += 1
