@@ -80,6 +80,16 @@
         ]
     },
 
+    "SEASON_FIVE": {
+        "season": 5,
+        "warmup": 0,
+        "episodes": [
+            {"WBCH S05E01": 1}
+        ],
+	"premium_episodes": [
+	]
+    },
+
     "WBDH": {
         "season": "WBDH",
         "warmup": 0,
