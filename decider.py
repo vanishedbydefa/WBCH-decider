@@ -1,3 +1,4 @@
+from pathlib import Path
 import argparse
 import random
 import time
@@ -39,7 +40,7 @@ def main():
         premium = exe_helper()
 
     # Check if epdb is present and not running as exe. (exe already included the data)
-    if not check_path_exists(os.getcwd()+"\\decider.exe", create=False) and not exe:
+    if not check_path_exists(os.path.join(os.getcwd(),"epdb.json"), create=False) and not exe:
         print("Please start program in the folder where epdb.json is stored")
         return
     
@@ -64,6 +65,8 @@ def main():
             print("(un)lucky, you " + wording + " retry in " + str(random.randrange(5,11)) + " minutes")
         else:
             print("(un)lucky, you " + wording + " retry in " + str(random.randrange(10,21)) + " minutes")
+        if exe:
+            os.system("pause")
         return
     
     get_episode(premium=premium)
@@ -124,7 +127,7 @@ def main():
                 for i in range(0, rand_val):
                     if get_random_num():
                         border +=1
-                    if border == (rand_val//2)+1:
+                    if border >= (rand_val//2):
                         cum_from_busting == True
                         break
                 break
