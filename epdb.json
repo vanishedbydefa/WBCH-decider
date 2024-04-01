@@ -77,7 +77,8 @@
         ],
         "premium_episodes": [
             {"_WBCH_Midseason-captioned-001.mp4": "MFP"},
-            {"_WBCH_Midseason-without-captions-002.mp4": "MFP"}
+            {"_WBCH_Midseason-without-captions-002.mp4": "MFP"},
+	    {"WBCH Season 4 Premium Finale": "SFP"}
         ]
     },
 
