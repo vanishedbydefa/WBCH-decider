@@ -86,7 +86,8 @@
         "season": 5,
         "warmup": 0,
         "episodes": [
-            {"WBCH S05E01": 1}
+            {"WBCH S05E01 BBC Kings & Queens": 1},
+	    {"WBCH S05E02 Snowbunny Style": 2}
         ],
 	"premium_episodes": [
 	]
