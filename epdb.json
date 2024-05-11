@@ -89,7 +89,9 @@
             {"WBCH S05E01 BBC Kings & Queens": 1},
             {"WBCH S05E02 Snowbunny Style": 2},
             {"WBCH S05E03 Here comes the „Darkness“": 3},
-            {"WBCH S05E03 Here comes the „Darkness“ - Explicit Version": 4}
+            {"WBCH S05E03 Here comes the „Darkness“ - Explicit Version": 4},
+	    {"WBCH S05E04 Here comes the „End of the Line“": 5},
+            {"WBCH S05E04 Here comes the „End of the Line“ - Explicit Version": 6}
         ],
 	"premium_episodes": [
 	]
