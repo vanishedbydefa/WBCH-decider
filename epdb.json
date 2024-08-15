@@ -91,7 +91,9 @@
             {"WBCH S05E03 Here comes the 'Darkness'": 3},
             {"WBCH S05E03 Here comes the 'Darkness' - Explicit Version": 4},
             {"WBCH S05E04 End of the Line": 5},
-            {"WBCH S05E04 End of the Line - Explicit Version": 6}
+            {"WBCH S05E04 End of the Line - Explicit Version": 6},
+	    {"WBCH S05E05 Time to become a Whiteboy Pop Star": 7},
+	    {"WBCH S05E05 Time to become a Whiteboy Pop Star - Explicit Version": 8}
         ],
 	"premium_episodes": [
 	]
@@ -123,7 +125,8 @@
             {"WBCH Special White Defeat": 0},
             {"WBCH Special Killing-You-Softly": 0},
             {"WBCH Special Killing-You-Softly - Explicit version": 0},
-	    {"WBCH Special BNWO Realized": 0}
+	    {"WBCH Special BNWO Realized": 0},
+	    {"WBCH Special: Asian BBC W****s":0}
         ]
     },
 
