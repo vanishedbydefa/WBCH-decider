@@ -15,7 +15,7 @@ GREEN = Fore.GREEN
 RESET = Fore.RESET
     
 def main():
-    print(f'Start: {time.strftime("%H:%M:%S", time.localtime())}')
+    #print(f'Start: {time.strftime("%H:%M:%S", time.localtime())}')
     parser = argparse.ArgumentParser(prog='WBCH Decider', description='Automatic decisions for doing WBCH episodes', epilog='https://github.com/vanishedbydefa')
     parser.add_argument('-p', '--premium', action='store_true', help='Include premium episodes')
 
@@ -25,16 +25,6 @@ def main():
     exe = False
     if sys.argv[0][-4:] == ".exe":
         exe = True
-
-    while True:
-        decider_ans = input("Do you wan't to start the full decider program?(y/n): ")
-        if decider_ans in ["y", "Y", "j", "J"]:
-            break
-        else:
-            Coinflip()
-            if exe:
-                os.system("pause")
-            return
 
     if exe:
         premium = exe_helper()
@@ -95,11 +85,11 @@ def main():
     print("The decider will start it's calculations and tell you the result. Wait a few seconds")
     border = 0
     cum_from_busting = False
-    for i in range(0,5):
+    for i in range(0,4):
         loading("Cum from busting:", overwrite=True)
         if get_random_num():
             border += 1
-        if border == 5:
+        if border == 2:
             cum_from_busting = True
             loading("Cum from busting:", overwrite=False)
             print(GREEN + "True" + RESET)
