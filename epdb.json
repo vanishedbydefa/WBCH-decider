@@ -78,7 +78,7 @@
         "premium_episodes": [
             {"_WBCH_Midseason-captioned-001.mp4": "MFP"},
             {"_WBCH_Midseason-without-captions-002.mp4": "MFP"},
-	    {"WBCH Season 4 Premium Finale": "SFP"}
+	        {"WBCH Season 4 Premium Finale": "SFP"}
         ]
     },
 
@@ -93,16 +93,16 @@
             {"WBCH S05E04 End of the Line": 5},
             {"WBCH S05E04 End of the Line - Explicit Version": 6},
             {"WBCH S05E04 End of the Line - Censored Version": 7},
-	    {"WBCH S05E04b Freaky For BBC": 8},
-	    {"WBCH S05E04b Freaky For BBC - Explicit Version": 9},
-	    {"WBCH S05E05 Time to become a Whiteboy Pop Star": 10},
-	    {"WBCH S05E05 Time to become a Whiteboy Pop Star - Explicit Version": 11},
-	    {"WBCH S05 Midseason Finale - A legendary challenge for any whiteboy": "MF"},
-	    {"WBCH S05 Midseason Finale - A legendary challenge for any whiteboy - Explicit Version": "MF"},
-            {"WBCH S05E06 – Global Blackening 🌍🔥♠️": 12},
-            {"WBCH S05E06 – Global Blackening 🌍🔥♠️ - Explicit Version": 13},
-            {"WBCH S05E07 BNWO Talk ♠️🥜🔨": 14},
-            {"WBCH S05E07 BNWO Talk ♠️🥜🔨 - Explicit Version": 15}
+            {"WBCH S05E04b Freaky For BBC": 8},
+            {"WBCH S05E04b Freaky For BBC - Explicit Version": 9},
+            {"WBCH S05E05 Time to become a Whiteboy Pop Star": 10},
+            {"WBCH S05E05 Time to become a Whiteboy Pop Star - Explicit Version": 11},
+            {"WBCH S05 Midseason Finale - A legendary challenge for any whiteboy": "MF"},
+            {"WBCH S05 Midseason Finale - A legendary challenge for any whiteboy - Explicit Version": "MF"},
+            {"WBCH S05E06 - Global Blackening ♠️": 12},
+            {"WBCH S05E06 - Global Blackening ♠️ - Explicit Version": 13},
+            {"WBCH S05E07 BNWO Talk ♠️": 14},
+            {"WBCH S05E07 BNWO Talk ♠️ - Explicit Version": 15}
         ],
 	"premium_episodes": [
 	]
