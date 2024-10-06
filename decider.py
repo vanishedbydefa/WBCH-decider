@@ -123,7 +123,7 @@ def main():
                 break
 
     if cum_from_busting:
-        print("\n\nResult: Bust your balls until you cum!")
+        print("\n\nResult: " + GREEN + "Bust your balls until you cum!" + RESET)
         print("If you do not cum within the given episode, press 'y' for another episode. Otherwise press 'n'")
         print("Do not terminate this program until you came!\n")
 
