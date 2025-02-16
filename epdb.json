@@ -31,8 +31,11 @@
             {"WBCH S02E08 - PMV BBC (Cherry Pop) - Black Cherry": 8},
             {"WBCH S02SF – Apocalypse": "SF"}
         ],
-	"premium_episodes": [
-	]
+        "revisited": [
+            {"WBCH S02E02 Censored-Captioned-Version - Whiteboys Were Meant To Plap": 1}
+        ],
+        "premium_episodes": [
+        ]
     },
 
     "SEASON_THREE": {
@@ -58,7 +61,7 @@
         ],
         "revisited": [
             {"WBCH S03E02 Revisited-Explicit-Version": 1},
-            {"WBCH S03E02 RevisitedNormal-Version": 2},
+            {"WBCH S03E02 Revisited-Normal-Version": 2},
             {"WBCH WBDH S03E02 Censored-Version Bounce & Bust For BNWO": 3}
         ]
     },
@@ -97,17 +100,28 @@
             {"WBCH S05E03 Explicit-Version - Here comes the 'Darkness'": 4},
             {"WBCH S05E04 Normal-Version - End of the Line": 5},
             {"WBCH S05E04 Explicit-Version - End of the Line": 6},
-            {"WBCH S05E04 Censored-Version - End of the Line": 7},
-            {"WBCH S05E04b Normal-Version - Freaky For BBC": 8},
-            {"WBCH S05E04b Explicit-Version - Freaky For BBC": 9},
-            {"WBCH S05E05 Normal-Version - Time to become a Whiteboy Pop Star": 10},
-            {"WBCH S05E05 Explicit-Version - Time to become a Whiteboy Pop Star": 11},
+            {"WBCH S05E04 Censored-Normal-Version - End of the Line": 7},
+            {"WBCH S05E04 Censored-Explicit-Version - End of the Line": 8},
+            {"WBCH S05E04b Normal-Version - Freaky For BBC": 9},
+            {"WBCH S05E04b Explicit-Version - Freaky For BBC": 10},
+            {"WBCH S05E05 Normal-Version - Time to become a Whiteboy Pop Star": 11},
+            {"WBCH S05E05 Explicit-Version - Time to become a Whiteboy Pop Star": 12},
             {"WBCH S05MSF Normal-Version - A legendary challenge for any whiteboy": "MF"},
             {"WBCH S05MSF Explicit-Version - A legendary challenge for any whiteboy": "MF"},
-            {"WBCH S05E06 Normal-Version - Global Blackening": 12},
-            {"WBCH S05E06 Explicit-Version - Global Blackening": 13},
-            {"WBCH S05E07 Normal-Version -  BNWO Talk": 14},
-            {"WBCH S05E07 Explicit-Version - BNWO Talk": 15}
+            {"WBCH S05E06 Normal-Version - Global Blackening": 13},
+            {"WBCH S05E06 Explicit-Version - Global Blackening": 14},
+            {"WBCH S05E06 Raw-Version - Global Blackening": 15},
+            {"WBCH S05E07 Normal-Version -  BNWO Talk": 16},
+            {"WBCH S05E07 Censored-Version - BNWO Talk": 17},
+            {"WBCH S05E07 Explicit-Version - BNWO Talk": 18},
+            {"WBCH S05E08 Normal-Version - A Good Time To Be A Whiteboy": 19},
+            {"WBCH S05E08 Explicit-Version - A Good Time To Be A Whiteboy": 20},
+            {"WBCH S05E09 Normal-Version - BBC Only Diva": 21},
+            {"WBCH S05E09 Explicit-Version - BBC Only Diva": 22},
+            {"WBCH S05E10 Normal-Version - Where Them White Girls At?": 23},
+            {"WBCH S05E10 Explicit-Version - Where Them White Girls At?": 24},
+            {"WBCH S05SF Uncaptioned-Version - White Balls Apocalypse": "SF"},
+            {"WBCH S05SF Explicit-Version - White Balls Apocalypse": "SF"}
         ],
 	"premium_episodes": [
 	]
