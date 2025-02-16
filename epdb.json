@@ -108,6 +108,23 @@
 	]
     },
 
+    "SEASON_SIX": {
+        "season": 6,
+        "warmup": 0,
+        "episodes": [
+            {"WBCH S06E01 Easy-Version Rock Steady For BNWO": 1},
+            {"WBCH S06E01 Normal-Version Rock Steady For BNWO": 2},
+            {"WBCH S06E01 Explicit-Version Rock Steady For BNWO": 3},
+            {"WBCH S06E02 Normal-Version BBC Cherry Pie": 4},
+            {"WBCH S06E02 Explicit-Version Rock Steady For BNWO": 5},
+            {"WBCH S06E03 Easy-Version The Perfect Stroke": 6},
+            {"WBCH S06E03 Normal-Version The Perfect Stroke": 7},
+	    {"WBCH S06E03 Explicit-Version The Perfect Stroke": 8},
+        ],
+	"premium_episodes": [
+	]
+    },
+
     "WBDH": {
         "season": "WBDH",
         "warmup": 0,
