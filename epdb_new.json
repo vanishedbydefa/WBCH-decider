@@ -580,79 +580,97 @@
 			{
                 "name": "WBCH S06E04 Normal-Version - Focus On BBC",
                 "episode": 4,
-                "hash": "66c205fd71642dab589921da8bfb2e7adfed14a5affd9e433b466a30b145df73",
+                "hash": "66C205FD71642DAB589921DA8BFB2E7ADFED14A5AFFD9E433B466A30B145DF73",
                 "tags": []
             },
 			{
                 "name": "WBCH S06E04 Explicit-Version - Focus On BBC",
                 "episode": 4,
-                "hash": "11175eee71f1c35a1fe8326dcbaecd68a91ed70ad71cc6ae55d060a3548e13b3",
+                "hash": "11175EEE71F1C35A1FE8326DCBAECD68A91ED70AD71CC6AE55D060A3548E13B3",
                 "tags": ["explicit"]
             },
 			{
                 "name": "WBCH S06E04 Explicit-Breathplay-Version - Focus On BBC",
                 "episode": 4,
-                "hash": "2699b6a90994bd20f1495d3d3bcff23e3a2d75235c464721d220feb836665bd3",
+                "hash": "2699B6A90994BD20F1495D3D3BCFF23E3A2D75235C464721D220FEB836665BD3",
                 "tags": ["explicit", "breathplay"]
             },
 			{
                 "name": "WBCH S06E04 WBDH-Version - Focus On BBC",
                 "episode": 4,
-                "hash": "45df10980093f0591e40c2770a38df95d7ff24e5522bf182e84af1caf5ef61ea",
+                "hash": "45DF10980093F0591E40C2770A38DF95D7FF24E5522BF182E84AF1CAF5EF61EA",
                 "tags": ["dildohero"]
             },
 			{
                 "name": "WBCH S06E05 Easy-Version - WWW",
                 "episode": 5,
-                "hash": "3df5be7a7f7696c191a21ea5335a9d3951f5002242a8f750d12473229a21c671",
+                "hash": "3DF5BE7A7F7696C191A21EA5335A9D3951F5002242A8F750D12473229A21C671",
                 "tags": ["easy"]
             },
 			{
                 "name": "WBCH S06E05 Normal-Version - WWW",
                 "episode": 5,
-                "hash": "e2d3451869cc45a8aad6a9050fa00599f14662abeba52c6ab3f7367d41de3769",
+                "hash": "E2D3451869CC45A8AAD6A9050FA00599F14662ABEBA52C6AB3F7367D41DE3769",
                 "tags": []
             },
 			{
                 "name": "WBCH S06E05 Explicit-Version - WWW",
                 "episode": 5,
-                "hash": "cb5778387aeb22275266ef295e45c6729ac5be8b2f9131315352d270252dd3a3",
+                "hash": "CB5778387AEB22275266EF295E45C6729AC5BE8B2F9131315352D270252DD3A3",
                 "tags": ["explicit"]
             },
 			{
                 "name": "WBCH S06E06 Easy-Version - Hot for BBC",
                 "episode": 6,
-                "hash": "fa6e731cbbc2f0589322424a69a9193b7ea6bbd66bd8057447c1979ce01f18e1",
+                "hash": "FA6E731CBBC2F0589322424A69A9193B7EA6BBD66BD8057447C1979CE01F18E1",
                 "tags": ["easy"]
             },
 			{
                 "name": "WBCH S06E06 Normal-Version - Hot for BBC",
                 "episode": 6,
-                "hash": "a38b62c6741494e8ea8ad55b7ee281ed922dfb0f854e81478a74150e8703bf02",
+                "hash": "A38B62C6741494E8EA8AD55B7EE281ED922DFB0F854E81478A74150E8703BF02",
                 "tags": []
             },
 			{
                 "name": "WBCH S06E06 Explicit-Version - Hot for BBC",
                 "episode": 6,
-                "hash": "8d5df0f89381b7334fe93c484cd3df1159ba439ec016df2a3dfc4b1ee14c32d3",
+                "hash": "8D5DF0F89381B7334FE93C484CD3DF1159BA439EC016DF2A3DFC4B1EE14C32D3",
                 "tags": ["explicit"]
             },
 			{
                 "name": "WBCH S06E07 Easy-Version - Whiteboy Trigger",
                 "episode": 7,
-                "hash": "c380a187b2e565160a2f1237dd940cc7890597dd2aee636076b4059e450f0700",
+                "hash": "C380A187B2E565160A2F1237DD940CC7890597DD2AEE636076B4059E450F0700",
                 "tags": ["easy"]
             },
 			{
                 "name": "WBCH S06E07 Normal-Version - Whiteboy Trigger",
                 "episode": 7,
-                "hash": "889c520206bb9bdd8a058289cce6fac6102903bd94d83a4edc88a4b1bb8f7361",
+                "hash": "889C520206BB9BDD8A058289CCE6FAC6102903BD94D83A4EDC88A4B1BB8F7361",
                 "tags": []
             },
 			{
                 "name": "WBCH S06E07 Explicit-Version - Whiteboy Trigger",
                 "episode": 7,
-                "hash": "3cc0df8aaded60adf1d5b4b1a8704b8aaf1890be69879cda5d82d7800aa8c670",
+                "hash": "3CC0DF8AADED60ADF1D5B4B1A8704B8AAF1890BE69879CDA5D82D7800AA8C670",
+                "tags": ["explicit"]
+            },
+            {           
+                "name": "WBCH S06E08 Easy-Version - I like you blacked",
+                "episode": 8,
+                "hash": "9300DFDD9D99AD6779688E3136D1CC3018D52BC555B29A4BBBC4A27FC7C2B53D",
+                "tags": ["easy"]
+            },
+            {           
+                "name": "WBCH S06E08 Normal-Version - I like you blacked",
+                "episode": 8,
+                "hash": "1142F21382BA4400EA563A46FAF1115E40D081323E6840B84AD0609348241FEB",
+                "tags": ["easy"]
+            },
+            {           
+                "name": "WBCH S06E08 Explicit-Version - I like you blacked",
+                "episode": 8,
+                "hash": "B42AA6CC81F8B0632EA6F8765F4D0C880BD71426ADD47F9188B6920D6C87E752",
                 "tags": ["explicit"]
             }
         ],
@@ -924,6 +942,10 @@
             {
                 "name": "ai mod",
                 "hash": "261c50cd43bb19984ad4d6949032a819771f7b48c236cc19b6148ada0f1bdccf"
+            },
+            {
+                "name": "Blacked&K",
+                "hash": "8965b6db5cd05d252f5d88e7881ecc3c11ffc9ce392631f07bc5bfcc1d4eaad2"
             }
         ]
     }
