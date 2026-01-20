@@ -672,6 +672,18 @@
                 "episode": 8,
                 "hash": "B42AA6CC81F8B0632EA6F8765F4D0C880BD71426ADD47F9188B6920D6C87E752",
                 "tags": ["explicit"]
+            },
+			{           
+                "name": "WBCH S06E09 Normal-Version - Down the rabbit hole",
+                "episode": 9,
+                "hash": "4AA67833101997AF4593FB78EA2BB0F191FE7C074588C2BF423997956EDB06B8",
+                "tags": []
+            },
+			{           
+                "name": "WBCH S06E09 Explicit-Version - Down the rabbit hole",
+                "episode": 9,
+                "hash": "3FE759A06AA37F60548E5E84CC2281D72F4C68413EC5C31DD936D45C74001836",
+                "tags": ["explicit"]
             }
         ],
 	"premium_episodes": [
